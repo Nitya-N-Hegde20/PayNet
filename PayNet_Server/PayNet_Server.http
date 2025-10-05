@@ -1,0 +1,6 @@
+@PayNet_Server_HostAddress = http://localhost:5289
+
+GET {{PayNet_Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
