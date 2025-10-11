@@ -29,5 +29,19 @@ namespace PayNet_Server.Controllers
 
             return Ok(account);
         }
+
+        [HttpPost("delete")]
+        public async Task<IActionResult> DeleteAccount([FromBody] string accountNumber)
+        {
+            if (string.IsNullOrEmpty(accountNumber))
+                return BadRequest("Account Number is required");
+
+            var account = await _accountRepository.DeleteAccountAsync(accountNumber);
+
+            if (account == null)
+                return StatusCode(500, "Error deleting account.");
+
+            return Ok(account);
+        }
     }
 }

@@ -26,5 +26,15 @@ namespace PayNet_Server.Repository
             return result;
 
         }
+
+        public async Task<bool> DeleteAccountAsync(string accountNumber)
+        {
+            var parameters = new DynamicParameters();
+            parameters.Add("@AccountNumber", accountNumber);
+            var result = await _db.QuerySingleAsync<bool>("DeleteAccount",
+                parameters, commandType: CommandType.StoredProcedure);
+
+            return result;
+        }
     }
 }
