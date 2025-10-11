@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Moq;
 using PayNet_Server.Repository;
 using PayNetServer.Controllers;
@@ -11,10 +12,11 @@ namespace PayNet_Test
     {
         Mock<ICustomerRepository> mockRepo;
         AuthController controller;
+        private readonly IConfiguration config;
         public AuthControllerTests()
         {
             mockRepo = new Mock<ICustomerRepository>();
-            controller = new AuthController(mockRepo.Object);
+            controller = new AuthController(mockRepo.Object, config);
         }
 
         [Fact]

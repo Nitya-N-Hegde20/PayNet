@@ -20,7 +20,7 @@ namespace PayNet_Server.Repository
             parameters.Add("@Address", customer.Address);
             parameters.Add("@Email", customer.Email);
             parameters.Add("@Phone", customer.Phone);
-            parameters.Add("@PasswordHash", customer.PasswordHash);
+            parameters.Add("@PasswordHash", customer.Password);
             parameters.Add("@IsActive", customer.IsActive);
 
             var result = await _db.QuerySingleAsync<int>("RegisterCustomer",
@@ -31,8 +31,13 @@ namespace PayNet_Server.Repository
 
         public async Task<Customer?> GetCustomerByEmailAsync(string email)
         {
-            var query = "SELECT * FROM Customer WHERE Email = @Email";
-            return await _db.QueryFirstOrDefaultAsync<Customer>(query, new { Email = email });
+            var result = await _db.QueryFirstOrDefaultAsync<Customer>(
+                "GetCustomerByEmail",
+                new { Email = email },
+                commandType: CommandType.StoredProcedure);
+
+            return result;
         }
+
     }
 }
