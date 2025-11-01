@@ -53,7 +53,7 @@ namespace PayNetServer.Controllers
             if (result == -1)
                 return BadRequest("Email already exists.");
 
-            return Ok("Registration successful");
+            return Ok(new { message = "Registration successful" });
         }
 
         [HttpPost("login")]
