@@ -1,4 +1,15 @@
-<h2>Login Page</h2>
-<input type="text" placeholder="Email" [(ngModel)]="username">
-<input type="password" placeholder="Password" [(ngModel)]="password">
-<button (click)="login()">Login</button>
+<div class="flex flex-col items-center mt-10">
+  <h2 class="text-2xl font-bold mb-4">Welcome to PayNet</h2>
+
+  <input [(ngModel)]="login.email" placeholder="Email" class="border p-2 mb-2 w-64 rounded" />
+  <input [(ngModel)]="login.password" type="password" placeholder="Password" class="border p-2 mb-4 w-64 rounded" />
+
+  <button (click)="onLogin()" [disabled]="loading"
+    class="bg-blue-600 text-white px-6 py-2 rounded">
+    {{ loading ? 'Logging in...' : 'Login' }}
+  </button>
+
+  <p class="mt-4">
+    Don’t have an account? <a routerLink="/register" class="text-blue-600">Register</a>
+  </p>
+</div>

@@ -78,9 +78,7 @@ namespace PayNetServer.Controllers
             return Ok(new
             {
                 Token = token,
-                CustomerName = customer.FullName,
-                Email = customer.Email,
-                Id =customer.Id
+                Customer=customer
             });
         }
 

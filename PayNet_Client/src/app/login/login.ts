@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Console } from 'console';
+import { HttpClient } from '@angular/common/http';
+import { LoginDTO } from '../model/loginDTO.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,10 +12,30 @@ import { Console } from 'console';
   styleUrl: './login.css',
 })
 export class Login {
-  username = '';
-  password = '';
+login :LoginDTO = new LoginDTO();
+loading : boolean=false;
 
-  login(){
-    console.log("Logging in with",this.username,this.password );
+constructor(private http:HttpClient,private router:Router){}
+
+  onLogin(){
+    this.loading = true;
+   this.http.post<any>('https://localhost:7110/api/Auth/login',this.login)
+   .subscribe(
+    {
+      next:(response:any) =>{
+        localStorage.setItem('token',response.token);
+        localStorage.setItem('customer',JSON.stringify(response.customer))
+        this.loading = true;
+        alert("Login Successful");
+        this.router.navigate(['/home']);
+
+      },
+      error:(error) =>{
+        this.loading = false;
+        console.error(error);
+        alert('Invalid email or password');
+      }
+    }
+   )
   }
 }
