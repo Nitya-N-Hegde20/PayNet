@@ -495,7 +495,8 @@ import {
   ɵɵvalidateIframeAttribute,
   ɵɵviewQuery,
   ɵɵviewQuerySignal
-} from "./chunk-Z2CURL4V.js";
+} from "./chunk-5Q4WA57K.js";
+import "./chunk-PJVWDKLX.js";
 export {
   ANIMATION_MODULE_TYPE,
   APP_BOOTSTRAP_LISTENER,

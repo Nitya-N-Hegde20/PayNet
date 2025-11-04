@@ -13,4 +13,11 @@ constructor(private router: Router) {}
   navigateTo(path: string) {
     this.router.navigate([path]);
   }
+  scrollTo(sectionId: string) {
+  const element = document.getElementById(sectionId);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
 }

@@ -29,7 +29,6 @@ import {
   makeEnvironmentProviders,
   makeStateKey,
   performanceMarkFeature,
-  require_cjs,
   require_operators,
   runInInjectionContext,
   setClassMetadata,
@@ -39,7 +38,10 @@ import {
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
   ɵɵinject
-} from "./chunk-AZQOMFDV.js";
+} from "./chunk-WATFVCJP.js";
+import {
+  require_cjs
+} from "./chunk-O5J3CNTX.js";
 import {
   __objRest,
   __spreadValues,
@@ -2817,4 +2819,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-72OTENVX.js.map
+//# sourceMappingURL=chunk-VKCZCY5O.js.map

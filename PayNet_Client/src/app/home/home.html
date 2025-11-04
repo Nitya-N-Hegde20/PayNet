@@ -1,44 +1,94 @@
-<div class="home-container">
-  <header class="app-header">
-    <h1>💳 PayNet</h1>
-    <p>Your Smart Payment Gateway</p>
-  </header>
-
-  <div class="card-grid">
-    <div class="feature-card" (click)="navigateTo('register')">
-      <img src="https://cdn-icons-png.flaticon.com/512/3062/3062634.png" alt="Register">
-      <h3>Register</h3>
-      <p>Create your PayNet account securely</p>
-    </div>
-
-    <div class="feature-card" (click)="navigateTo('login')">
-      <img src="https://cdn-icons-png.flaticon.com/512/456/456212.png" alt="Login">
-      <h3>Login</h3>
-      <p>Access your PayNet wallet</p>
-    </div>
-
-    <div class="feature-card" (click)="navigateTo('create-account')">
-      <img src="https://cdn-icons-png.flaticon.com/512/2721/2721270.png" alt="Create Account">
-      <h3>Create Account</h3>
-      <p>Open a new savings or current account</p>
-    </div>
-
-    <div class="feature-card" (click)="navigateTo('transfer')">
-      <img src="https://cdn-icons-png.flaticon.com/512/2312/2312627.png" alt="Transfer">
-      <h3>Send Money</h3>
-      <p>Transfer funds instantly and securely</p>
-    </div>
-
-    <div class="feature-card" (click)="navigateTo('history')">
-      <img src="https://cdn-icons-png.flaticon.com/512/3523/3523063.png" alt="History">
-      <h3>Transaction History</h3>
-      <p>View your past transactions anytime</p>
-    </div>
-
-    <div class="feature-card" (click)="navigateTo('support')">
-      <img src="https://cdn-icons-png.flaticon.com/512/1828/1828940.png" alt="Support">
-      <h3>Help & Support</h3>
-      <p>We’re here to assist you 24x7</p>
+<!-- home.component.html -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-secondary shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">💸 PayNet</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about" (click)="scrollTo('about')">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact" (click)="scrollTo('contact')">Contact</a></li>
+        <li class="nav-item"><a class="btn btn-light text-primary mx-2" (click)="navigateTo('/login')">Login</a></li>
+        <li class="nav-item"><a class="btn btn-warning" (click)="navigateTo('/register')">Register</a></li>
+      </ul>
     </div>
   </div>
-</div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-section text-center text-white d-flex align-items-center">
+  <div class="container">
+    <h1 class="display-4 fw-bold">Welcome to PayNet</h1>
+    <p >
+      The simplest way to send and receive money securely anytime, anywhere 🚀
+    </p>
+    <a (click)="navigateTo('/register')" class="btn btn-lg btn-warning me-2">Get Started</a>
+    <a (click)="navigateTo('/login')" class="btn btn-lg btn-outline-light">Login</a>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-5 bg-light text-center">
+  <div class="container">
+    <h2 class="fw-bold mb-4">About PayNet</h2>
+    <p class="lead text-muted">
+      PayNet is a secure and easy-to-use payment solution built to make digital
+      transactions seamless and fast. With our intuitive interface, you can
+      manage your finances, create accounts, and send money with just a few
+      clicks.
+    </p>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-5 bg-light text-center">
+  <div class="container">
+    <h2 class="fw-bold mb-4">Contact Us</h2>
+    <p class="lead text-muted">
+      Have questions or feedback? Reach out to us anytime.
+    </p>
+    <div class="d-flex justify-content-center mt-4">
+      <div class="card shadow-sm p-4" style="max-width: 400px; width: 100%;">
+        <form>
+          <div class="mb-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Your Name"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Your Email"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <textarea
+              class="form-control"
+              rows="3"
+              placeholder="Your Message"
+              required
+            ></textarea>
+          </div>
+          <button class="btn btn-primary w-100">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-center py-3 bg-primary text-white mt-4">
+  <p class="mb-0">© 2025 PayNet. All rights reserved.</p>
+</footer>

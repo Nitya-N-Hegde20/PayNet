@@ -41,7 +41,6 @@ import {
   isSubscribable,
   numberAttribute,
   performanceMarkFeature,
-  require_cjs,
   setClassMetadata,
   stringify,
   untracked,
@@ -56,7 +55,10 @@ import {
   ɵɵinject,
   ɵɵinjectAttribute,
   ɵɵstyleProp
-} from "./chunk-AZQOMFDV.js";
+} from "./chunk-WATFVCJP.js";
+import {
+  require_cjs
+} from "./chunk-O5J3CNTX.js";
 import {
   __spreadProps,
   __spreadValues,
@@ -4909,4 +4911,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-UDGGJWJV.js.map
+//# sourceMappingURL=chunk-ACO3DKE5.js.map
