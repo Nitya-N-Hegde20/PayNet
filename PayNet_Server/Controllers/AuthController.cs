@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Google.Apis.Auth;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using PayNet_Server.DTOs;
 using PayNet_Server.Repository;
@@ -81,6 +82,67 @@ namespace PayNetServer.Controllers
                 Customer=customer
             });
         }
+        [HttpPost("google-login")]
+        public async Task<IActionResult> GoogleLogin([FromBody] GoogleLoginDto dto)
+        {
+            try
+            {
+                var payload = await GoogleJsonWebSignature.ValidateAsync(dto.IdToken);
+
+                var existing = await _repository.GetCustomerByEmailAsync(payload.Email);
+                if (existing == null)
+                {
+                    return Ok(new
+                    {
+                        requiresPhone = true,
+                        FullName = payload.Name,
+                        Email = payload.Email
+                    });
+                }
+
+                var token = GenerateJwtToken(existing);
+                return Ok(new
+                {
+                    Token = token,
+                    Customer = existing,
+                    requiresPhone = false
+                });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Google login failed: {ex.Message}");
+            }
+        }
+
+        [HttpPost("complete-google-registration")]
+        public async Task<IActionResult> CompleteGoogleRegistration([FromBody] GoogleRegistrationDto dto)
+        {
+            if (string.IsNullOrWhiteSpace(dto.Email))
+                return BadRequest("Email is required");
+
+            var existing = await _repository.GetCustomerByEmailAsync(dto.Email);
+            if (existing != null)
+                return BadRequest("User already exists");
+
+            var customer = new Customer
+            {
+                FullName = dto.FullName,
+                Email = dto.Email,
+                Phone = dto.Phone,
+                Address = string.Empty, // optional for Google
+                Password = string.Empty,
+                IsActive = true
+            };
+
+            await _repository.RegisterCustomerAsync(customer);
+
+            var savedCustomer = await _repository.GetCustomerByEmailAsync(dto.Email);
+            var token = GenerateJwtToken(savedCustomer);
+
+            return Ok(new { Token = token, Customer = savedCustomer });
+        }
+
+
 
         private string GenerateJwtToken(Customer customer)
         {

@@ -1,0 +1,15 @@
+<div class="container mt-5">
+  <div class="card p-4 shadow-lg mx-auto" style="max-width: 400px;">
+    <h3 class="text-center mb-3">Complete Registration</h3>
+    <p class="text-muted text-center">Hi {{googleUser.FullName}}, please provide your phone number to continue</p>
+
+    <form (ngSubmit)="submitPhone()">
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input [(ngModel)]="phone" name="phone" class="form-control" placeholder="Enter phone number" required />
+      </div>
+
+      <button class="btn btn-primary w-100 mt-3">Submit</button>
+    </form>
+  </div>
+</div>
