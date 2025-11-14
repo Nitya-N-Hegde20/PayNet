@@ -4,13 +4,16 @@ import {
   ROUTES,
   Router,
   loadChildren
-} from "./chunk-GD6EAY6X.js";
+} from "./chunk-JTAIA4M3.js";
 import {
   BrowserDomAdapter,
   BrowserModule,
   EVENT_MANAGER_PLUGINS,
   EventManagerPlugin
-} from "./chunk-3O7G6BXL.js";
+} from "./chunk-6J5DKLPJ.js";
+import {
+  HTTP_ROOT_INTERCEPTOR_FNS
+} from "./chunk-VKCZCY5O.js";
 import {
   APP_BASE_HREF,
   NullViewportScroller,
@@ -19,10 +22,7 @@ import {
   ViewportScroller,
   getDOM,
   setRootDomAdapter
-} from "./chunk-ACO3DKE5.js";
-import {
-  HTTP_ROOT_INTERCEPTOR_FNS
-} from "./chunk-VKCZCY5O.js";
+} from "./chunk-4YXK3LOP.js";
 import {
   XhrFactory
 } from "./chunk-B4DTGZCK.js";
@@ -29541,4 +29541,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-5YTNBED3.js.map
+//# sourceMappingURL=chunk-DW6XPH24.js.map

@@ -1,0 +1,69 @@
+<!-- src/app/dashboard/dashboard.component.html -->
+<div class="pn-dashboard">
+  <header class="pn-header">
+    <div class="pn-brand">
+      <div class="logo">💸</div>
+      <div>
+        <div class="app-title">PayNet</div>
+        <div class="app-sub">Send & receive money — simple & secure</div>
+      </div>
+    </div>
+
+    <div class="pn-header-actions">
+      <div class="user-info">
+        <div class="user-name">Hi, {{ customerName }}</div>
+        <div class="user-email" *ngIf="customerData?.Email || customerData?.email">
+          {{ customerData?.Email || customerData?.email }}
+        </div>
+      </div>
+      <div class="header-buttons">
+        <button class="btn small" (click)="navigate('/profile')">Profile</button>
+        <button class="btn outline small" (click)="logout()">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="pn-main container">
+    <section class="balance-card">
+      <div>
+        <div class="label">Available Balance</div>
+        <div class="balance">₹ <span>0.00</span></div>
+      </div>
+      <div>
+        <button class="btn primary" (click)="navigate('/create-account')">Create Account</button>
+      </div>
+    </section>
+
+    <section class="actions-grid">
+      <div class="action" *ngFor="let item of sections[0].items" (click)="navigate(item.route)">
+        <div class="icon">{{ item.icon }}</div>
+        <div class="text">{{ item.name }}</div>
+      </div>
+      <!-- quick small actions row -->
+    </section>
+
+    <section class="sections">
+      <div *ngFor="let sec of sections" class="section-card">
+        <div class="section-title">{{ sec.title }}</div>
+        <div class="section-items">
+          <div class="item" *ngFor="let it of sec.items" (click)="navigate(it.route)">
+            <div class="it-icon">{{ it.icon }}</div>
+            <div class="it-name">{{ it.name }}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="recent">
+      <div class="recent-title">Recent activity</div>
+      <div class="recent-list">
+        <div class="recent-item">No transactions yet — start by sending money!</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pn-footer">
+    <div>© 2025 PayNet</div>
+    <div class="small">Need help? <a (click)="navigate('/support')">Contact support</a></div>
+  </footer>
+</div>
