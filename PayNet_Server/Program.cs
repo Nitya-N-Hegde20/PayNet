@@ -41,6 +41,8 @@ builder.Services.AddScoped<IDbConnection>(sp =>
     new SqlConnection(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddScoped<IAccountRepository, AccountRepository>();
+builder.Services.AddHttpClient<IBankRepository, BankRepository>();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

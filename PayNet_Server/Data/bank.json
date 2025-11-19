@@ -1,0 +1,206 @@
+﻿[
+  {
+    "name": "State Bank of India",
+    "code": "SBI"
+  },
+  {
+    "name": "HDFC Bank",
+    "code": "HDFC"
+  },
+  {
+    "name": "ICICI Bank",
+    "code": "ICICI"
+  },
+  {
+    "name": "Axis Bank",
+    "code": "AXIS"
+  },
+  {
+    "name": "Kotak Mahindra Bank",
+    "code": "KOTAK"
+  },
+  {
+    "name": "Punjab National Bank",
+    "code": "PNB"
+  },
+  {
+    "name": "Bank of Baroda",
+    "code": "BOB"
+  },
+  {
+    "name": "Canara Bank",
+    "code": "CANARA"
+  },
+  {
+    "name": "Union Bank of India",
+    "code": "UBI"
+  },
+  {
+    "name": "IDBI Bank",
+    "code": "IDBI"
+  },
+  {
+    "name": "Bank of India",
+    "code": "BOI"
+  },
+  {
+    "name": "Indian Bank",
+    "code": "INDIAN"
+  },
+  {
+    "name": "Central Bank of India",
+    "code": "CBI"
+  },
+  {
+    "name": "UCO Bank",
+    "code": "UCO"
+  },
+  {
+    "name": "Indian Overseas Bank",
+    "code": "IOB"
+  },
+  {
+    "name": "Bank of Maharashtra",
+    "code": "BOM"
+  },
+  {
+    "name": "Jammu and Kashmir Bank",
+    "code": "JKB"
+  },
+  {
+    "name": "Yes Bank",
+    "code": "YES"
+  },
+  {
+    "name": "RBL Bank",
+    "code": "RBL"
+  },
+  {
+    "name": "Bandhan Bank",
+    "code": "BANDHAN"
+  },
+  {
+    "name": "Federal Bank",
+    "code": "FEDERAL"
+  },
+  {
+    "name": "South Indian Bank",
+    "code": "SIB"
+  },
+  {
+    "name": "IndusInd Bank",
+    "code": "INDUSIND"
+  },
+  {
+    "name": "City Union Bank",
+    "code": "CUB"
+  },
+  {
+    "name": "Karur Vysya Bank",
+    "code": "KVB"
+  },
+  {
+    "name": "Tamilnad Mercantile Bank",
+    "code": "TMB"
+  },
+  {
+    "name": "Karnataka Bank",
+    "code": "KARNATAKA"
+  },
+  {
+    "name": "Dhanlaxmi Bank",
+    "code": "DHAN"
+  },
+  {
+    "name": "DCB Bank",
+    "code": "DCB"
+  },
+  {
+    "name": "Nainital Bank",
+    "code": "NAINITAL"
+  },
+  {
+    "name": "AU Small Finance Bank",
+    "code": "AUSF"
+  },
+  {
+    "name": "Equitas Small Finance Bank",
+    "code": "ESFB"
+  },
+  {
+    "name": "Ujjivan Small Finance Bank",
+    "code": "UJJV"
+  },
+  {
+    "name": "Jana Small Finance Bank",
+    "code": "JSFB"
+  },
+  {
+    "name": "Fincare Small Finance Bank",
+    "code": "FINCARE"
+  },
+  {
+    "name": "ESAF Small Finance Bank",
+    "code": "ESAF"
+  },
+  {
+    "name": "North East Small Finance Bank",
+    "code": "NESFB"
+  },
+  {
+    "name": "Shivalik Small Finance Bank",
+    "code": "SHIVA"
+  },
+  {
+    "name": "India Post Payments Bank",
+    "code": "IPPB"
+  },
+  {
+    "name": "Airtel Payments Bank",
+    "code": "AIRTEL"
+  },
+  {
+    "name": "Paytm Payments Bank",
+    "code": "PAYTM"
+  },
+  {
+    "name": "FINO Payments Bank",
+    "code": "FINO"
+  },
+  {
+    "name": "Punjab & Sind Bank",
+    "code": "PSB"
+  },
+  {
+    "name": "Saraspur Bank",
+    "code": "SARAS"
+  },
+  {
+    "name": "Suryoday Small Finance Bank",
+    "code": "SURYODAY"
+  },
+  {
+    "name": "Andhra Pradesh Grameena Vikas Bank",
+    "code": "APGVB"
+  },
+  {
+    "name": "Bangiya Gramin Vikash Bank",
+    "code": "BGVB"
+  },
+  {
+    "name": "Baroda Gujarat Gramin Bank",
+    "code": "BGGB"
+  },
+  {
+    "name": "Chaitanya Godavari Grameena Bank",
+    "code": "CGGB"
+  },
+  {
+    "name": "Kerala Gramin Bank",
+    "code": "KGB"
+  },
+  {
+    "name": "Madhya Pradesh Gramin Bank",
+    "code": "MPGB"
+  }
+]
