@@ -19,16 +19,17 @@ namespace PayNet_Server.Controllers
         [HttpPost("create")]
         public async Task<IActionResult> CreateAccount([FromBody] CreateAccountDto dto)
         {
-            if (dto.InitialBalance < 0)
-                return BadRequest("Initial balance cannot be negative.");
+            if (string.IsNullOrEmpty(dto.IFSC))
+                return BadRequest("IFSC required.");
 
-            var account = await _accountRepository.CreateAccountAsync(dto);
+            if (string.IsNullOrEmpty(dto.BankCode))
+                return BadRequest("Bank Code required.");
 
-            if (account == null)
-                return StatusCode(500, "Error creating account.");
+            var accountNumber = await _accountRepository.CreateAccountAsync(dto);
 
-            return Ok(account);
+            return Ok(new { message = "Account created", AccountNumber = accountNumber });
         }
+
 
         [HttpPost("delete")]
         public async Task<IActionResult> DeleteAccount([FromBody] string accountNumber)

@@ -14,16 +14,19 @@ namespace PayNet_Server.Repository
             _db = db;
         }
 
-        public async Task<AccountDto?> CreateAccountAsync(CreateAccountDto dto)
+        public async Task<string?> CreateAccountAsync(CreateAccountDto dto)
         {
-            var parameters = new DynamicParameters();
-            parameters.Add("@CustomerId", dto.CustomerId);
-            parameters.Add("@InitialBalance", dto.InitialBalance);
+            var p = new DynamicParameters();
+            p.Add("@CustomerId", dto.CustomerId);
+            p.Add("@BankName", dto.BankName);
+            p.Add("@BankCode", dto.BankCode);
+            p.Add("@BranchName", dto.BranchName);
+            p.Add("@IFSC", dto.IFSC);
 
-            var result = await _db.QuerySingleAsync<AccountDto>("CreateAccount",
-                parameters, commandType: CommandType.StoredProcedure);
-
-            return result;
+            return await _db.QuerySingleAsync<string>(
+                "CreateAccount",
+                p,
+                commandType: CommandType.StoredProcedure);
 
         }
 

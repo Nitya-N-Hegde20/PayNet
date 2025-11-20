@@ -26,20 +26,41 @@ namespace PayNet_Test
         }
 
         [Fact]
-        public async Task CreateAccount_ReturnsBadRequest_WhenBalanceisNegative()
+        public async Task CreateAccount_ReturnsBadRequest_WhenIFSCIsNull()
         {
             CreateAccountDto createAccountDto = new CreateAccountDto
             {
                 CustomerId = 1,
-                InitialBalance = -3
+                BankName = "HDFC",
+                BankCode = "HDFC",
+                BranchName = "Bangalore",
             };
             mockRepo.Setup(r => r.CreateAccountAsync(It.IsAny<CreateAccountDto>()))
-                  .ReturnsAsync(It.IsAny<AccountDto>());
+                  .ReturnsAsync(It.IsAny<string>());
 
             var result = await controller.CreateAccount(createAccountDto);
             // Assert
             var badRequest = Assert.IsType<BadRequestObjectResult>(result);
-            Assert.Equal("Initial balance cannot be negative.", badRequest.Value);
+            Assert.Equal("IFSC required.", badRequest.Value);
+        }
+
+        [Fact]
+        public async Task CreateAccount_ReturnsBadRequest_WhenBankCodeIsNull()
+        {
+            CreateAccountDto createAccountDto = new CreateAccountDto
+            {
+                CustomerId = 1,
+                BankName = "HDFC",
+                BranchName = "Bangalore",
+                IFSC = "HDFC0001234"
+            };
+            mockRepo.Setup(r => r.CreateAccountAsync(It.IsAny<CreateAccountDto>()))
+                  .ReturnsAsync(It.IsAny<string>());
+
+            var result = await controller.CreateAccount(createAccountDto);
+            // Assert
+            var badRequest = Assert.IsType<BadRequestObjectResult>(result);
+            Assert.Equal("Bank Code required.", badRequest.Value);
         }
 
         [Fact]
@@ -48,10 +69,13 @@ namespace PayNet_Test
             CreateAccountDto createAccountDto = new CreateAccountDto
             {
                 CustomerId = 1,
-                InitialBalance = 2000
+                BankName = "HDFC",
+                BankCode = "HDFC",
+                BranchName = "Bangalore",
+                IFSC = "HDFC0001234"
             };
             mockRepo.Setup(r => r.CreateAccountAsync(It.IsAny<CreateAccountDto>()))
-                  .ReturnsAsync(It.IsAny<AccountDto>());
+                  .ReturnsAsync(It.IsAny<string>());
 
             var result = await controller.CreateAccount(createAccountDto);
             Assert.NotNull(result);

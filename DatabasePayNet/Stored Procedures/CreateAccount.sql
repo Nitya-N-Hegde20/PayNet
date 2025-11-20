@@ -1,19 +1,21 @@
-CREATE OR ALTER PROCEDURE dbo.CreateAccount
+CREATE or ALTER PROCEDURE CreateAccount
     @CustomerId INT,
-    @InitialBalance DECIMAL(18,2)
+    @BankName NVARCHAR(100),
+    @BankCode NVARCHAR(20),
+    @BranchName NVARCHAR(100),
+    @IFSC NVARCHAR(20)
 AS
 BEGIN
     SET NOCOUNT ON;
 
-    DECLARE @AccountNumber NVARCHAR(20);
-    -- Simple logic: ACC + current timestamp to make unique number
-    SET @AccountNumber = 'ACC' + RIGHT(CONVERT(VARCHAR(20), GETDATE(), 112) + 
-                         CONVERT(VARCHAR(10), DATEPART(SECOND, GETDATE())), 8) +
-                         CAST(@CustomerId AS NVARCHAR(10));
+    DECLARE @NextId INT;
+    SELECT @NextId = ISNULL(MAX(Id), 0) + 1 FROM Accounts;
 
-    INSERT INTO Accounts (CustomerId, AccountNumber, Balance)
-    VALUES (@CustomerId, @AccountNumber, @InitialBalance);
+    DECLARE @AccountNumber NVARCHAR(50);
+    SET @AccountNumber = 'PN-' + @BankCode + '-' + FORMAT(GETDATE(), 'yyyy') + '-' + FORMAT(@NextId, '000000');
 
-    SELECT * FROM Accounts WHERE AccountNumber = @AccountNumber;
+    INSERT INTO Accounts (CustomerId, BankName, BankCode, BranchName, IFSC, AccountNumber)
+    VALUES (@CustomerId, @BankName, @BankCode, @BranchName, @IFSC, @AccountNumber);
+
+    SELECT @AccountNumber AS AccountNumber;
 END
-GO

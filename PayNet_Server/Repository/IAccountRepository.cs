@@ -5,7 +5,7 @@ namespace PayNet_Server.Repository
 {
     public interface IAccountRepository
     {
-        Task<AccountDto?> CreateAccountAsync(CreateAccountDto account);
+        Task<string> CreateAccountAsync(CreateAccountDto account);
 
         Task<bool>DeleteAccountAsync (string accountNumber);
     }
