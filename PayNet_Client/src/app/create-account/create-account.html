@@ -1,0 +1,63 @@
+<app-navbar></app-navbar>
+
+<div class="container mt-4 d-flex justify-content-center">
+  <div class="card shadow-lg border-0 paynet-card" style="max-width: 520px; width: 100%;">
+
+  <div class="card shadow-lg border-0 paynet-card">
+    
+    <!-- Header -->
+    <div class="card-header text-white text-center" 
+         style="background: var(--paynet-gradient)">
+      <h4 class="mb-0">Create New Bank Account</h4>
+    </div>
+
+    <!-- Body -->
+    <div class="card-body p-4">
+
+      <!-- Bank -->
+      <div class="mb-3">
+        <label class="form-label fw-bold text-primary">Select Bank</label>
+        <select [(ngModel)]="form.bankCode" (change)="onBankSelect()" 
+                class="form-select shadow-sm">
+          <option value="" disabled selected>Select bank</option>
+          <option *ngFor="let b of banks" [value]="b.code">
+            {{ b.name }}
+          </option>
+        </select>
+      </div>
+
+      <!-- Branch -->
+      <div class="mb-3" *ngIf="branches.length > 0">
+        <label class="form-label fw-bold text-primary">Select Branch</label>
+        <select [(ngModel)]="form.branchName" (change)="onBranchSelect()" 
+                class="form-select shadow-sm">
+          <option value="" disabled selected>Select branch</option>
+          <option *ngFor="let br of branches" [value]="br.name">
+            {{ br.name }}
+          </option>
+        </select>
+      </div>
+
+      <!-- IFSC -->
+      <div class="mb-3">
+        <label class="form-label fw-bold text-primary">IFSC Code</label>
+        <input class="form-control shadow-sm" 
+               [(ngModel)]="form.ifsc" readonly />
+      </div>
+
+      <!-- Balance -->
+      <div class="mb-3">
+        <label class="form-label fw-bold text-primary">Initial Balance</label>
+        <input type="number" class="form-control shadow-sm"
+               [(ngModel)]="form.balance" 
+               placeholder="Enter opening balance" />
+      </div>
+
+      <!-- Button -->
+      <button class="btn btn-paynet w-100 py-2" 
+              (click)="createAccount()">
+        Create Account
+      </button>
+    </div>
+  </div>
+</div>

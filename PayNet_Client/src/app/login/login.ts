@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { LoginDTO } from '../model/loginDTO.model';
 import { Router } from '@angular/router';
 import { Auth } from '../Services/auth';
+import { Navbar } from '../layout/navbar/navbar';
 declare const google: any;
 @Component({
   selector: 'app-login',

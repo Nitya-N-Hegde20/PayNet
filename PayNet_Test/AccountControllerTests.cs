@@ -3,14 +3,6 @@ using Moq;
 using PayNet_Server.Controllers;
 using PayNet_Server.DTOs;
 using PayNet_Server.Repository;
-using PayNetServer.Controllers;
-using PayNetServer.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit.Sdk;
 
 namespace PayNet_Test
 {
@@ -34,6 +26,7 @@ namespace PayNet_Test
                 BankName = "HDFC",
                 BankCode = "HDFC",
                 BranchName = "Bangalore",
+                Balance = 2000
             };
             mockRepo.Setup(r => r.CreateAccountAsync(It.IsAny<CreateAccountDto>()))
                   .ReturnsAsync(It.IsAny<string>());
@@ -52,7 +45,8 @@ namespace PayNet_Test
                 CustomerId = 1,
                 BankName = "HDFC",
                 BranchName = "Bangalore",
-                IFSC = "HDFC0001234"
+                IFSC = "HDFC0001234",
+                Balance = 2000
             };
             mockRepo.Setup(r => r.CreateAccountAsync(It.IsAny<CreateAccountDto>()))
                   .ReturnsAsync(It.IsAny<string>());
@@ -72,7 +66,8 @@ namespace PayNet_Test
                 BankName = "HDFC",
                 BankCode = "HDFC",
                 BranchName = "Bangalore",
-                IFSC = "HDFC0001234"
+                IFSC = "HDFC0001234",
+                Balance = 2000
             };
             mockRepo.Setup(r => r.CreateAccountAsync(It.IsAny<CreateAccountDto>()))
                   .ReturnsAsync(It.IsAny<string>());

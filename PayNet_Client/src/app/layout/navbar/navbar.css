@@ -1,0 +1,21 @@
+.paynet-navbar {
+  background: #d5d8db !important; /* Light grey */
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.paynet-navbar .nav-link {
+  color: #0047AB !important;  /* Dark blue from theme */
+  font-weight: 500;
+}
+
+.paynet-navbar .nav-link:hover {
+  color: #007BFF !important;
+}
+
+.paynet-logo {
+  height: 42px;
+}
+
+.nav-link{
+  color: #0047AB;
+}

@@ -1,27 +1,23 @@
 <!-- src/app/dashboard/dashboard.component.html -->
 <div class="pn-dashboard">
   <header class="pn-header">
-    <div class="pn-brand">
-      <div class="logo">💸</div>
-      <div>
-        <div class="app-title">PayNet</div>
-        <div class="app-sub">Send & receive money — simple & secure</div>
-      </div>
+  <div class="pn-brand">
+    <img src="/logo.png" class="paynet-logo" />
+  </div>
+
+  <div class="pn-header-actions">
+
+    <div class="user-info">
+      <div class="user-name">Hi, {{ customerName }}</div>
+      
     </div>
 
-    <div class="pn-header-actions">
-      <div class="user-info">
-        <div class="user-name">Hi, {{ customerName }}</div>
-        <div class="user-email" *ngIf="customerData?.Email || customerData?.email">
-          {{ customerData?.Email || customerData?.email }}
-        </div>
-      </div>
-      <div class="header-buttons">
-        <button class="btn small" (click)="navigate('/profile')">Profile</button>
-        <button class="btn outline small" (click)="logout()">Logout</button>
-      </div>
-    </div>
-  </header>
+    <button class="btn small" (click)="navigate('/profile')">Profile</button>
+    <button class="btn outline small" (click)="logout()">Logout</button>
+
+  </div>
+</header>
+
 
   <main class="pn-main container">
     <section class="balance-card">
@@ -30,7 +26,7 @@
         <div class="balance">₹ <span>0.00</span></div>
       </div>
       <div>
-        <button class="btn primary" (click)="navigate('/create-account')">Create Account</button>
+        <button class="btn primary outline small" (click)="navigate('/create-account')">Create Account</button>
       </div>
     </section>
 

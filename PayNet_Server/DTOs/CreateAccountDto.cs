@@ -7,5 +7,6 @@
         public string BankCode { get; set; }
         public string BranchName { get; set; }
         public string IFSC { get; set; }
+        public decimal Balance { get; set; }
     }
 }

@@ -22,7 +22,7 @@ namespace PayNet_Server.Repository
             p.Add("@BankCode", dto.BankCode);
             p.Add("@BranchName", dto.BranchName);
             p.Add("@IFSC", dto.IFSC);
-
+            p.Add("@Balance", dto.Balance);
             return await _db.QuerySingleAsync<string>(
                 "CreateAccount",
                 p,

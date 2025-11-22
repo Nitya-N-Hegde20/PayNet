@@ -1,0 +1,69 @@
+/* PayNet Main Theme Colors */
+:root {
+  --paynet-dark: #0047AB;
+  --paynet-light: #33CFFF;
+  --paynet-gradient: linear-gradient(to right, #0047AB, #33CFFF);
+}
+
+/* Navbar */
+
+.paynet-navbar {
+  background: white !important;
+  padding: 10px 20;
+}
+
+.paynet-logo {
+  height: 48px;
+  background-color: transparent;
+  padding: 2px;
+  border-radius: 8px;
+}
+
+
+/* Hero Section */
+.hero-section {
+  height: 85vh;
+  background: var(--paynet-gradient);
+}
+
+/* Buttons */
+.btn-outline-light:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Light Sections */
+.section-light {
+  background: #f8f9fa;
+}
+
+/* Contact Card */
+.contact-card {
+  max-width: 420px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Footer */
+.paynet-footer {
+  background: var(--paynet-gradient);
+}
+
+
+/* Common PayNet button */
+.btn-paynet {
+  background: var(--paynet-gradient);
+  border: none;
+  color: white !important;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+.btn-paynet:hover {
+  opacity: 0.9;
+}
+
+/* Card theme */
+.paynet-card {
+  border-radius: 10px;
+  overflow: hidden;
+}

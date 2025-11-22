@@ -1,206 +1,254 @@
 ﻿[
   {
     "name": "State Bank of India",
-    "code": "SBI"
+    "code": "SBI",
+    "branches": [
+      {
+        "name": "Bangalore - MG Road",
+        "ifsc": "SBIN0000123"
+      },
+      {
+        "name": "Bangalore - Koramangala",
+        "ifsc": "SBIN0000456"
+      },
+      {
+        "name": "Mumbai - Andheri",
+        "ifsc": "SBIN0000678"
+      }
+    ]
   },
   {
     "name": "HDFC Bank",
-    "code": "HDFC"
+    "code": "HDFC",
+    "branches": [
+      {
+        "name": "Bangalore - Indiranagar",
+        "ifsc": "HDFC0001234"
+      },
+      {
+        "name": "Bangalore - Whitefield",
+        "ifsc": "HDFC0005678"
+      },
+      {
+        "name": "Mumbai - Bandra",
+        "ifsc": "HDFC0004321"
+      }
+    ]
   },
   {
     "name": "ICICI Bank",
-    "code": "ICICI"
+    "code": "ICICI",
+    "branches": [
+      {
+        "name": "Chennai - T Nagar",
+        "ifsc": "ICIC0001122"
+      },
+      {
+        "name": "Hyderabad - Madhapur",
+        "ifsc": "ICIC0003344"
+      },
+      {
+        "name": "Delhi - Connaught Place",
+        "ifsc": "ICIC0005566"
+      }
+    ]
   },
   {
     "name": "Axis Bank",
-    "code": "AXIS"
+    "code": "AXIS",
+    "branches": [
+      {
+        "name": "Bangalore - Jayanagar",
+        "ifsc": "UTIB0000789"
+      },
+      {
+        "name": "Pune - Hinjewadi",
+        "ifsc": "UTIB0009876"
+      },
+      {
+        "name": "Delhi - Karol Bagh",
+        "ifsc": "UTIB0007654"
+      }
+    ]
   },
   {
     "name": "Kotak Mahindra Bank",
-    "code": "KOTAK"
+    "code": "KOTAK",
+    "branches": [
+      {
+        "name": "Bangalore - HSR Layout",
+        "ifsc": "KKBK0001123"
+      },
+      {
+        "name": "Mumbai - Powai",
+        "ifsc": "KKBK0005566"
+      },
+      {
+        "name": "Hyderabad - Banjara Hills",
+        "ifsc": "KKBK0008899"
+      }
+    ]
   },
   {
     "name": "Punjab National Bank",
-    "code": "PNB"
+    "code": "PNB",
+    "branches": [
+      {
+        "name": "Delhi - Lajpat Nagar",
+        "ifsc": "PUNB0123456"
+      },
+      {
+        "name": "Chandigarh - Sector 17",
+        "ifsc": "PUNB0456123"
+      },
+      {
+        "name": "Jaipur - MI Road",
+        "ifsc": "PUNB0789456"
+      }
+    ]
   },
   {
     "name": "Bank of Baroda",
-    "code": "BOB"
+    "code": "BOB",
+    "branches": [
+      {
+        "name": "Ahmedabad - CG Road",
+        "ifsc": "BARB0CGROAD"
+      },
+      {
+        "name": "Mumbai - Fort",
+        "ifsc": "BARB0FORTXX"
+      },
+      {
+        "name": "Bangalore - Rajajinagar",
+        "ifsc": "BARB0RAJXX"
+      }
+    ]
   },
   {
     "name": "Canara Bank",
-    "code": "CANARA"
+    "code": "CANARA",
+    "branches": [
+      {
+        "name": "Bangalore - Vijayanagar",
+        "ifsc": "CNRB0001234"
+      },
+      {
+        "name": "Mysore - Kuvempunagar",
+        "ifsc": "CNRB0005678"
+      },
+      {
+        "name": "Chennai - Tambaram",
+        "ifsc": "CNRB0003344"
+      }
+    ]
   },
   {
     "name": "Union Bank of India",
-    "code": "UBI"
-  },
-  {
-    "name": "IDBI Bank",
-    "code": "IDBI"
-  },
-  {
-    "name": "Bank of India",
-    "code": "BOI"
-  },
-  {
-    "name": "Indian Bank",
-    "code": "INDIAN"
-  },
-  {
-    "name": "Central Bank of India",
-    "code": "CBI"
-  },
-  {
-    "name": "UCO Bank",
-    "code": "UCO"
+    "code": "UBI",
+    "branches": [
+      {
+        "name": "Mumbai - Dadar",
+        "ifsc": "UBIN0531234"
+      },
+      {
+        "name": "Bangalore - Kammanahalli",
+        "ifsc": "UBIN0567890"
+      },
+      {
+        "name": "Delhi - Rohini",
+        "ifsc": "UBIN0598765"
+      }
+    ]
   },
   {
     "name": "Indian Overseas Bank",
-    "code": "IOB"
+    "code": "IOB",
+    "branches": [
+      {
+        "name": "Chennai - Anna Nagar",
+        "ifsc": "IOBA0001234"
+      },
+      {
+        "name": "Coimbatore - Gandhipuram",
+        "ifsc": "IOBA0005678"
+      },
+      {
+        "name": "Trichy - Cantonment",
+        "ifsc": "IOBA0004321"
+      }
+    ]
   },
   {
-    "name": "Bank of Maharashtra",
-    "code": "BOM"
+    "name": "IDFC First Bank",
+    "code": "IDFC",
+    "branches": [
+      {
+        "name": "Bangalore - Manyata",
+        "ifsc": "IDFB0040101"
+      },
+      {
+        "name": "Mumbai - Goregaon",
+        "ifsc": "IDFB0040202"
+      },
+      {
+        "name": "Delhi - Aerocity",
+        "ifsc": "IDFB0040303"
+      }
+    ]
   },
   {
-    "name": "Jammu and Kashmir Bank",
-    "code": "JKB"
-  },
-  {
-    "name": "Yes Bank",
-    "code": "YES"
-  },
-  {
-    "name": "RBL Bank",
-    "code": "RBL"
-  },
-  {
-    "name": "Bandhan Bank",
-    "code": "BANDHAN"
-  },
-  {
-    "name": "Federal Bank",
-    "code": "FEDERAL"
-  },
-  {
-    "name": "South Indian Bank",
-    "code": "SIB"
+    "name": "YES Bank",
+    "code": "YES",
+    "branches": [
+      {
+        "name": "Mumbai - Lower Parel",
+        "ifsc": "YESB0000123"
+      },
+      {
+        "name": "Bangalore - Koramangala",
+        "ifsc": "YESB0000456"
+      },
+      {
+        "name": "Hyderabad - Gachibowli",
+        "ifsc": "YESB0000789"
+      }
+    ]
   },
   {
     "name": "IndusInd Bank",
-    "code": "INDUSIND"
+    "code": "INDUS",
+    "branches": [
+      {
+        "name": "Pune - Kothrud",
+        "ifsc": "INDB0001234"
+      },
+      {
+        "name": "Mumbai - Thane",
+        "ifsc": "INDB0005678"
+      },
+      {
+        "name": "Chennai - Velachery",
+        "ifsc": "INDB0004321"
+      }
+    ]
   },
   {
-    "name": "City Union Bank",
-    "code": "CUB"
-  },
-  {
-    "name": "Karur Vysya Bank",
-    "code": "KVB"
-  },
-  {
-    "name": "Tamilnad Mercantile Bank",
-    "code": "TMB"
-  },
-  {
-    "name": "Karnataka Bank",
-    "code": "KARNATAKA"
-  },
-  {
-    "name": "Dhanlaxmi Bank",
-    "code": "DHAN"
-  },
-  {
-    "name": "DCB Bank",
-    "code": "DCB"
-  },
-  {
-    "name": "Nainital Bank",
-    "code": "NAINITAL"
-  },
-  {
-    "name": "AU Small Finance Bank",
-    "code": "AUSF"
-  },
-  {
-    "name": "Equitas Small Finance Bank",
-    "code": "ESFB"
-  },
-  {
-    "name": "Ujjivan Small Finance Bank",
-    "code": "UJJV"
-  },
-  {
-    "name": "Jana Small Finance Bank",
-    "code": "JSFB"
-  },
-  {
-    "name": "Fincare Small Finance Bank",
-    "code": "FINCARE"
-  },
-  {
-    "name": "ESAF Small Finance Bank",
-    "code": "ESAF"
-  },
-  {
-    "name": "North East Small Finance Bank",
-    "code": "NESFB"
-  },
-  {
-    "name": "Shivalik Small Finance Bank",
-    "code": "SHIVA"
-  },
-  {
-    "name": "India Post Payments Bank",
-    "code": "IPPB"
-  },
-  {
-    "name": "Airtel Payments Bank",
-    "code": "AIRTEL"
-  },
-  {
-    "name": "Paytm Payments Bank",
-    "code": "PAYTM"
-  },
-  {
-    "name": "FINO Payments Bank",
-    "code": "FINO"
-  },
-  {
-    "name": "Punjab & Sind Bank",
-    "code": "PSB"
-  },
-  {
-    "name": "Saraspur Bank",
-    "code": "SARAS"
-  },
-  {
-    "name": "Suryoday Small Finance Bank",
-    "code": "SURYODAY"
-  },
-  {
-    "name": "Andhra Pradesh Grameena Vikas Bank",
-    "code": "APGVB"
-  },
-  {
-    "name": "Bangiya Gramin Vikash Bank",
-    "code": "BGVB"
-  },
-  {
-    "name": "Baroda Gujarat Gramin Bank",
-    "code": "BGGB"
-  },
-  {
-    "name": "Chaitanya Godavari Grameena Bank",
-    "code": "CGGB"
-  },
-  {
-    "name": "Kerala Gramin Bank",
-    "code": "KGB"
-  },
-  {
-    "name": "Madhya Pradesh Gramin Bank",
-    "code": "MPGB"
+    "name": "Federal Bank",
+    "code": "FEDERAL",
+    "branches": [
+      {
+        "name": "Kochi - Edappally",
+        "ifsc": "FDRL0001234"
+      },
+      {
+        "name": "Trivandrum - Pattom",
+        "ifsc": "FDRL0005678"
+      },
+      {
+        "name": "Bangalore - BTM Layout",
+        "ifsc": "FDRL0004321"
+      }
+    ]
   }
 ]
