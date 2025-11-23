@@ -1,29 +1,18 @@
-CREATE or ALter PROCEDURE UpdateCustomer
+CREATE or Alter PROCEDURE UpdateCustomer
 (
     @Id INT,
-    @FullName NVARCHAR(100),
-    @Address NVARCHAR(250),
-    @Phone NVARCHAR(20)
+    @FullName NVARCHAR(200),
+    @Address NVARCHAR(200),
+    @Phone NVARCHAR(15),
+    @Email NVARCHAR(200)
 )
 AS
 BEGIN
-    SET NOCOUNT ON;
-
-    -- Update customer
     UPDATE Customer
-    SET 
-        FullName = @FullName,
-        Address = @Address,
-        Phone = @Phone
-    WHERE Id = @Id;
+    SET FullName = @FullName,
+        Address  = @Address,
+        Phone    = @Phone
+    WHERE Id = @Id;  
 
-    -- Return updated record
-    SELECT 
-        Id,
-        FullName,
-        Email,
-        Phone,
-        Address
-    FROM Customer
-    WHERE Id = @Id;
+    SELECT * FROM Customer WHERE Id = @Id;
 END

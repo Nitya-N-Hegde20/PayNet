@@ -22,7 +22,9 @@
   <main class="pn-main container">
     <section class="balance-card">
       <div>
-        <div class="balance">₹ {{ balance }}</div>
+        <div *ngIf="balance != null">
+  ₹ {{ balance }}
+</div>
       </div>
       <div>
         <button class="btn primary outline small" (click)="navigate('/create-account')">Create Account</button>

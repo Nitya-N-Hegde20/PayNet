@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Auth } from '../Services/auth';
 import { CommonModule } from '@angular/common';
@@ -12,6 +12,7 @@ import { Console } from 'console';
   styleUrl: './dashboard.css',
 })
 export class Dashboard implements OnInit {
+  
   customerName = 'User';
   customerData: any = null;
  balance : any;
@@ -22,6 +23,7 @@ export class Dashboard implements OnInit {
         { name: 'Pay Contact', route: '/pay-contact', icon: '👤' },
         { name: 'Pay to Bank', route: '/pay-bank', icon: '🏦' },
         { name: 'Scan QR', route: '/scan-qr', icon: '🔳' },
+        { name:'My QR Code', route:'/qr', icon:'📱'},
         { name: 'Self Transfer', route: '/self-transfer', icon: '🔁' }
       ]
     },
@@ -52,7 +54,7 @@ export class Dashboard implements OnInit {
     }
   ];
 
-  constructor(private router: Router, private auth: Auth, private http:HttpClient) {}
+  constructor(private router: Router, private auth: Auth, private http:HttpClient, private cd:ChangeDetectorRef) {}
 
   ngOnInit(): void {
     try {
@@ -79,7 +81,7 @@ export class Dashboard implements OnInit {
   this.http.get(`https://localhost:7110/api/Account/balance/${this.customerData.id}`)
     .subscribe((res: any) => {
       this.balance = res.balance;
-      console.log(this.balance);
+      this.cd.detectChanges();;
     });
 }
 }

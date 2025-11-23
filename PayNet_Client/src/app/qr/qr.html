@@ -1,0 +1,24 @@
+<app-navbar></app-navbar>
+
+<div class="qr-container">
+
+  <div class="card shadow qr-card">
+
+    <div class="card-header text-center" style="background: var(--paynet-gradient); color: white;">
+      <h4 class="mb-0">My PayNet QR</h4>
+    </div>
+
+    <div class="card-body text-center">
+      <h5 class="fw-bold mb-3">{{ fullName }}</h5>
+
+      <img *ngIf="qrUrl"
+           [src]="qrUrl"
+           alt="QR Code"
+           class="qr-image shadow">
+
+      <p class="mt-3 text-muted">Scan this QR to send me money instantly.</p>
+    </div>
+
+  </div>
+
+</div>
