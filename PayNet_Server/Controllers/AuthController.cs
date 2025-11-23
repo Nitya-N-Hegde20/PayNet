@@ -159,6 +159,8 @@ namespace PayNetServer.Controllers
             return Ok(updated);
         }
 
+
+
         private string GenerateJwtToken(Customer customer)
         {
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Auth } from '../Services/auth';
 import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
+import { Console } from 'console';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,7 +14,7 @@ import { CommonModule } from '@angular/common';
 export class Dashboard implements OnInit {
   customerName = 'User';
   customerData: any = null;
-
+ balance : any;
   sections = [
     {
       title: 'Transfers',
@@ -50,13 +52,14 @@ export class Dashboard implements OnInit {
     }
   ];
 
-  constructor(private router: Router, private auth: Auth) {}
+  constructor(private router: Router, private auth: Auth, private http:HttpClient) {}
 
   ngOnInit(): void {
     try {
       const c = localStorage.getItem('customer');
       this.customerData = c ? JSON.parse(c) : null;
       this.customerName = this.customerData?.FullName || this.customerData?.fullName || 'PayNet User';
+      this.loadBalance();
     } catch {
       this.customerName = 'PayNet User';
     }
@@ -71,4 +74,12 @@ export class Dashboard implements OnInit {
     this.auth.logout();
     this.router.navigate(['/login']);
   }
+
+  loadBalance() {
+  this.http.get(`https://localhost:7110/api/Account/balance/${this.customerData.id}`)
+    .subscribe((res: any) => {
+      this.balance = res.balance;
+      console.log(this.balance);
+    });
+}
 }

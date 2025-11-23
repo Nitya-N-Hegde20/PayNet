@@ -30,6 +30,14 @@ namespace PayNet_Server.Controllers
             return Ok(new { message = "Account created", AccountNumber = accountNumber });
         }
 
+        [HttpGet("balance/{customerId}")]
+        public async Task<IActionResult> GetBalance(int customerId)
+        {
+            var balance = await _accountRepository.GetBalanceAsync(customerId);
+            return Ok(new { balance });
+        }
+
+
 
         [HttpPost("delete")]
         public async Task<IActionResult> DeleteAccount([FromBody] string accountNumber)

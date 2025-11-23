@@ -30,6 +30,16 @@ namespace PayNet_Server.Repository
 
         }
 
+        public async Task<decimal> GetBalanceAsync(int customerId)
+        {
+            return await _db.QueryFirstOrDefaultAsync<decimal>(
+                "GetCustomerBalance",
+                new { CustomerId = customerId },
+                commandType: CommandType.StoredProcedure
+            );
+        }
+
+
         public async Task<bool> DeleteAccountAsync(string accountNumber)
         {
             var parameters = new DynamicParameters();

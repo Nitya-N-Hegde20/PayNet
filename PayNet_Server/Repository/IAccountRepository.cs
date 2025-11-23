@@ -8,5 +8,6 @@ namespace PayNet_Server.Repository
         Task<string> CreateAccountAsync(CreateAccountDto account);
 
         Task<bool>DeleteAccountAsync (string accountNumber);
+        Task<decimal> GetBalanceAsync(int customerId);
     }
 }
