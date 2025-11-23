@@ -142,7 +142,22 @@ namespace PayNetServer.Controllers
             return Ok(new { Token = token, Customer = savedCustomer });
         }
 
+        [HttpPut("update")]
+        public async Task<IActionResult> UpdateCustomer([FromBody] UpdateCustomerDTO dto)
+        {
+            var updated = await _repository.UpdateCustomerAsync(new Customer
+            {
+                Id = dto.Id,
+                FullName = dto.FullName,
+                Address = dto.Address,
+                Phone = dto.Phone
+            });
 
+            if (updated == null)
+                return NotFound();
+
+            return Ok(updated);
+        }
 
         private string GenerateJwtToken(Customer customer)
         {

@@ -5,6 +5,7 @@ import { Login } from './login/login';
 import { AddPhone } from './add-phone/add-phone';
 import { Dashboard } from './dashboard/dashboard';
 import { CreateAccount } from './create-account/create-account';
+import { Profile } from './profile/profile';
 
 export const routes: Routes = [
     {path:'home', component:Home},
@@ -13,5 +14,6 @@ export const routes: Routes = [
     {path:'addphone', component:AddPhone},
     {path:'dashboard', component:Dashboard},
     {path:'create-account', component:CreateAccount},
+    {path:'profile', component:Profile},
     {path:'',redirectTo:'home',pathMatch:'full'}
 ];

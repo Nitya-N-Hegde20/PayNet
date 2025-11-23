@@ -3,7 +3,8 @@ CREATE or ALTER PROCEDURE CreateAccount
     @BankName NVARCHAR(100),
     @BankCode NVARCHAR(20),
     @BranchName NVARCHAR(100),
-    @IFSC NVARCHAR(20)
+    @IFSC NVARCHAR(20),
+    @Balance decimal
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -14,8 +15,8 @@ BEGIN
     DECLARE @AccountNumber NVARCHAR(50);
     SET @AccountNumber = 'PN-' + @BankCode + '-' + FORMAT(GETDATE(), 'yyyy') + '-' + FORMAT(@NextId, '000000');
 
-    INSERT INTO Accounts (CustomerId, BankName, BankCode, BranchName, IFSC, AccountNumber)
-    VALUES (@CustomerId, @BankName, @BankCode, @BranchName, @IFSC, @AccountNumber);
+    INSERT INTO Accounts (CustomerId, BankName, BankCode, BranchName, IFSC, AccountNumber,Balance)
+    VALUES (@CustomerId, @BankName, @BankCode, @BranchName, @IFSC, @AccountNumber, @Balance);
 
     SELECT @AccountNumber AS AccountNumber;
 END

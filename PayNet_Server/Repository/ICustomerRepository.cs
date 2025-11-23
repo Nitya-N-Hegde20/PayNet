@@ -6,5 +6,6 @@ namespace PayNet_Server.Repository
     {
         Task<int> RegisterCustomerAsync(Customer customer);
         Task<Customer?> GetCustomerByEmailAsync(string email);
+        Task<Customer> UpdateCustomerAsync(Customer customer);
     }
 }

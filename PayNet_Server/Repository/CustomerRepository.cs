@@ -39,5 +39,25 @@ namespace PayNet_Server.Repository
             return result;
         }
 
+        public async Task<Customer> UpdateCustomerAsync(Customer customer)
+        {
+            var parameters = new
+            {
+                customer.Id,
+                customer.FullName,
+                customer.Address,
+                customer.Phone,
+                customer.Email   // <-- ADD THIS
+            };
+
+            var result = await _db.QueryFirstOrDefaultAsync<Customer>(
+                "UpdateCustomer",
+                parameters,
+                commandType: CommandType.StoredProcedure
+            );
+
+            return result!;
+        }
+
     }
 }

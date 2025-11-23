@@ -1,0 +1,67 @@
+<app-navbar></app-navbar>
+
+<div class="profile-container">
+
+  <div class="card shadow profile-card">
+
+    <!-- HEADER -->
+    <div class="card-header d-flex justify-content-between align-items-center"
+         style="background: var(--paynet-gradient); color:white;">
+      <h4 class="mb-0">My Profile</h4>
+
+      <!-- EDIT ICON -->
+      <div class="edit-wrap" *ngIf="!isEditing" (click)="enableEdit()">
+        <i class="bi bi-pencil-square"></i>
+      </div>
+    </div>
+
+    <!-- BODY -->
+    <div class="card-body">
+
+      <div class="text-center mb-4">
+        <h5 class="mt-2 fw-bold">{{ customer.fullName }}</h5>
+      </div>
+
+      <!-- FULL NAME -->
+      <label class="form-label fw-bold">Full Name</label>
+      <input class="form-control shadow-sm mb-3"
+             [(ngModel)]="customer.fullName"
+             [readonly]="!isEditing">
+
+      <!-- EMAIL (Always readonly) -->
+      <label class="form-label fw-bold">Email</label>
+      <input class="form-control shadow-sm mb-3"
+             [(ngModel)]="customer.email"
+             readonly>
+
+      <!-- PHONE -->
+      <label class="form-label fw-bold">Phone</label>
+      <input class="form-control shadow-sm mb-3"
+             [(ngModel)]="customer.phone"
+             [readonly]="!isEditing">
+
+      <!-- ADDRESS -->
+      <label class="form-label fw-bold">Address</label>
+      <input class="form-control shadow-sm mb-4"
+             [(ngModel)]="customer.address"
+             [readonly]="!isEditing">
+
+      <!-- ACTION BUTTONS -->
+      <div *ngIf="isEditing" class="d-flex gap-2">
+
+        <button class="btn btn-paynet w-50 py-2"
+                (click)="saveChanges()">
+          Save
+        </button>
+
+        <button class="btn btn-secondary w-50 py-2"
+                (click)="cancelEdit()">
+          Cancel
+        </button>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
