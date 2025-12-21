@@ -404,3 +404,4 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+src\Environment\environment.ts

@@ -6,6 +6,7 @@ import { LoginDTO } from '../model/loginDTO.model';
 import { Router } from '@angular/router';
 import { Auth } from '../Services/auth';
 import { Navbar } from '../layout/navbar/navbar';
+import { environment } from '../../Environment/environment';
 declare const google: any;
 @Component({
   selector: 'app-login',
@@ -22,7 +23,7 @@ export class Login implements OnInit {
   ngOnInit() {
     // ✅ Initialize Google Sign-In
     google.accounts.id.initialize({
-      client_id: '1097085061162-o80f5hq1uu3r2oa4ulb52j8hhq858gsb.apps.googleusercontent.com',
+      client_id: environment.googleClientId,
       callback: (response: any) => this.handleGoogleResponse(response),
     });
 

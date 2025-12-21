@@ -1,0 +1,20 @@
+.qr-container {
+  max-width: 450px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.qr-video {
+  width: 100%;
+  border-radius: 12px;
+  border: 3px solid var(--paynet-dark);
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.result-box {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  border: 1px solid var(--paynet-dark);
+}

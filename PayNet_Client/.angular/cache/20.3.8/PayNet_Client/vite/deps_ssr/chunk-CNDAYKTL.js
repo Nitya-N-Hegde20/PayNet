@@ -1,14 +1,14 @@
 import { createRequire } from 'module';const require = createRequire(import.meta.url);
 import {
-  withHttpTransferCache
-} from "./chunk-VKCZCY5O.js";
-import {
   CommonModule,
   DomAdapter,
   PLATFORM_BROWSER_ID,
   getDOM,
   setRootDomAdapter
 } from "./chunk-4YXK3LOP.js";
+import {
+  withHttpTransferCache
+} from "./chunk-VKCZCY5O.js";
 import {
   XhrFactory,
   parseCookieValue
@@ -2043,4 +2043,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-6J5DKLPJ.js.map
+//# sourceMappingURL=chunk-CNDAYKTL.js.map

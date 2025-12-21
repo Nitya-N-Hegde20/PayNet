@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+
+<div class="qr-container">
+  <h2 class="text-center mb-3">Scan QR Code</h2>
+
+  <!-- Video preview -->
+  <video #preview class="qr-video"></video>
+
+  <p class="text-center mt-2 text-muted">
+    Point your camera at the QR code
+  </p>
+
+  <div *ngIf="qrResult" class="result-box">
+    <h5>QR Data:</h5>
+    <p>{{ qrResult }}</p>
+
+    <button class="btn btn-paynet w-100" (click)="processQR()">
+      Proceed to Payment
+    </button>
+  </div>
+</div>
+
