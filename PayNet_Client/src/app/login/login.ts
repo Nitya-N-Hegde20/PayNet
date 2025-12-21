@@ -6,7 +6,7 @@ import { LoginDTO } from '../model/loginDTO.model';
 import { Router } from '@angular/router';
 import { Auth } from '../Services/auth';
 import { Navbar } from '../layout/navbar/navbar';
-import { environment } from '../../Environment/environment';
+import { environment } from '../../Environment/environments';
 declare const google: any;
 @Component({
   selector: 'app-login',
