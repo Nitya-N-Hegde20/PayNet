@@ -9,5 +9,7 @@ namespace PayNet_Server.Repository
 
         Task<bool>DeleteAccountAsync (string accountNumber);
         Task<decimal> GetBalanceAsync(int customerId);
+        Task<List<Account>> GetAccountsByCustomerIdAsync(int customerId);
+
     }
 }

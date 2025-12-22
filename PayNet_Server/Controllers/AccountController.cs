@@ -52,5 +52,12 @@ namespace PayNet_Server.Controllers
 
             return Ok(account);
         }
+
+        [HttpGet("customer/{customerId}")]
+        public async Task<IActionResult> GetAccountsByCustomerId(int customerId)
+        {
+            var accounts = await _accountRepository.GetAccountsByCustomerIdAsync(customerId);
+            return Ok(accounts);
+        }
     }
 }

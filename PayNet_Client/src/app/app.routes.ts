@@ -7,6 +7,7 @@ import { Dashboard } from './dashboard/dashboard';
 import { CreateAccount } from './create-account/create-account';
 import { Profile } from './profile/profile';
 import { QR } from './qr/qr';
+import { SendMoney } from './send-money/send-money';
 
 export const routes: Routes = [
     {path:'home', component:Home},
@@ -16,6 +17,7 @@ export const routes: Routes = [
     {path:'dashboard', component:Dashboard},
     {path:'create-account', component:CreateAccount},
     {path:'profile', component:Profile},
+    {path:'send-money', component:SendMoney},
     {path:'qr', component:QR},
     {path:'',redirectTo:'home',pathMatch:'full'}
 ];

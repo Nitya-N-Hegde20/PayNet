@@ -49,5 +49,16 @@ namespace PayNet_Server.Repository
 
             return result;
         }
+
+        public async Task<List<Account>> GetAccountsByCustomerIdAsync(int customerId)
+        {
+            var result = await _db.QueryAsync<Account>(
+                "GetAccountsByCustomerId",
+                new { CustomerId = customerId },
+                commandType: CommandType.StoredProcedure
+            );
+
+            return result.ToList();
+        }
     }
 }

@@ -47,7 +47,7 @@ namespace PayNet_Server.Repository
                 customer.FullName,
                 customer.Address,
                 customer.Phone,
-                customer.Email   // <-- ADD THIS
+                customer.Email   
             };
 
             var result = await _db.QueryFirstOrDefaultAsync<Customer>(

@@ -4,7 +4,7 @@ CREATE OR ALTER PROCEDURE GetCustomerBalance
 )
 AS
 BEGIN
-    SELECT SUM(Balance) AS Balance
-    FROM Accounts
-    WHERE CustomerId = @CustomerId;
+    SELECT ISNULL(Balance, 0) AS Balance
+    FROM Accounts 
+    WHERE CustomerId = @CustomerId
 END
