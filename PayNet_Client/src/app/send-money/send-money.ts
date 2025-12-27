@@ -12,45 +12,71 @@ import { Navbar } from '../layout/navbar/navbar';
   styleUrl: './send-money.css',
 })
 export class SendMoney implements OnInit {
+accounts: any[] = [];
 
-  // 🔹 properties used in HTML MUST exist here
-  accounts: any[] = [];
+  fromAccountNumber!: string;   // ⭐ STRING
+  receiverAccountNumber!: string;
 
-  fromAccountId!: number;
-  toAccountId!: number;
+  receiverCustomerId!: number;
+  receiverPhone!: string;
+  receiverName!: string;
+
   amount!: number;
-
   customerId!: number;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit(): void {
     const customer = JSON.parse(localStorage.getItem('customer') || '{}');
     this.customerId = customer.id;
 
-    this.loadAccounts();
+    const nav = history.state;
+
+    if (nav?.receiverCustomerId) {
+      this.receiverCustomerId = nav.receiverCustomerId;
+      this.receiverPhone = nav.phone;
+      this.receiverName = nav.name;
+
+      this.loadReceiverAccount(nav.receiverCustomerId);
+    }
+
+    this.loadMyAccounts();
   }
 
-  loadAccounts() {
+  // ⭐ Load user's accounts
+  loadMyAccounts() {
     this.http
       .get<any[]>(`https://localhost:7110/api/Account/customer/${this.customerId}`)
-      .subscribe({
-        next: (res) => this.accounts = res,
-        error: () => alert('Failed to load accounts')
+      .subscribe(res => {
+        this.accounts = res; // They already have accountNumber
+      });
+  }
+
+  // ⭐ Load receiver first account
+  loadReceiverAccount(custId: number) {
+    this.http
+      .get<any[]>(`https://localhost:7110/api/Account/customer/${custId}`)
+      .subscribe(res => {
+        if (res.length > 0) {
+          this.receiverAccountNumber = res[0].accountNumber;
+        }
       });
   }
 
   send() {
     const payload = {
-      fromAccountId: this.fromAccountId,
-      toAccountId: this.toAccountId,
+      fromAccountId: this.fromAccountNumber,   // ⭐ STRING accountNumber
+      toAccountId: this.receiverAccountNumber, // ⭐ STRING accountNumber
       amount: this.amount
     };
 
     this.http
       .post('https://localhost:7110/api/Transaction/send', payload)
       .subscribe({
-        next: () => alert('Money sent successfully'),
+        next: () => {
+          alert('Money sent successfully');
+          this.router.navigate(['/dashboard']);
+        },
         error: () => alert('Transaction failed')
       });
   }

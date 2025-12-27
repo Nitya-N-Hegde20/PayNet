@@ -1,0 +1,41 @@
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  transition: 0.2s;
+}
+
+.contact-item:hover {
+  transform: scale(1.02);
+  background: #f8faff;
+}
+
+.contact-photo {
+  width: 50px; height: 50px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-name {
+  font-weight: 600;
+}
+
+.contact-phone {
+  font-size: 14px;
+  color: #6b7280;
+}

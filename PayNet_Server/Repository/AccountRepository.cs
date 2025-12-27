@@ -60,5 +60,14 @@ namespace PayNet_Server.Repository
 
             return result.ToList();
         }
+
+        public async Task<Account?> GetFirstAccountAsync(int customerId)
+        {
+            return await _db.QueryFirstOrDefaultAsync<Account>(
+                "GetFirstAccountByCustomer",
+                new { CustomerId = customerId },
+                commandType: CommandType.StoredProcedure
+            );
+        }
     }
 }

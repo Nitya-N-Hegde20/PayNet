@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+
+<div class="container mt-4">
+
+  <h3 class="fw-bold text-primary mb-3">Pay Contact</h3>
+
+  <!-- Loading -->
+  <div *ngIf="loading" class="text-center text-muted">
+    Loading contacts...
+  </div>
+
+  <!-- No contacts -->
+  <div *ngIf="!loading && contacts.length === 0" class="text-center text-muted">
+    No contacts found.
+  </div>
+
+  <!-- Contact list -->
+  <div *ngIf="!loading && contacts.length > 0">
+    <div class="card shadow-sm mb-2 p-3 contact-item"
+         *ngFor="let c of contacts"
+         (click)="selectContact(c)">
+      <div class="d-flex align-items-center">
+        <div class="contact-avatar">{{ c.name[0] }}</div>
+        <div class="ms-3">
+          <div class="fw-bold">{{ c.name }}</div>
+          <small class="text-muted">{{ c.phone }}</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

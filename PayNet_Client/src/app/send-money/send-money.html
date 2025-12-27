@@ -5,21 +5,25 @@
 
     <h4 class="fw-bold mb-3 text-primary">Send Money</h4>
 
+    <!-- FROM ACCOUNT -->
     <label>From Account</label>
-    <select class="form-select mb-3" [(ngModel)]="fromAccountId">
+    <select class="form-select mb-3" [(ngModel)]="fromAccountNumber">
       <option *ngFor="let acc of accounts" [value]="acc.accountNumber">
-        {{ acc.accountNumber }}
+        {{ acc.accountNumber }} — ₹{{ acc.balance }}
       </option>
     </select>
 
+    <!-- TO ACCOUNT (AUTO FILLED) -->
     <label>To Account</label>
-    <input class="form-control mb-3" [(ngModel)]="toAccountId">
+    <input class="form-control mb-3" [(ngModel)]="receiverAccountNumber" readonly>
 
+    <!-- AMOUNT -->
     <label>Amount</label>
     <input type="number" class="form-control mb-3" [(ngModel)]="amount">
 
     <button class="btn btn-paynet w-100" (click)="send()">
       Send Money
     </button>
+
   </div>
 </div>

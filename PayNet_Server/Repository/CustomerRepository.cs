@@ -59,5 +59,21 @@ namespace PayNet_Server.Repository
             return result!;
         }
 
+        public async Task<IEnumerable<Customer>> GetPayNetContactsAsync(int excludeCustomerId)
+        {
+            var sql = @"
+        SELECT Id, FullName, Phone, Email
+        FROM Customer
+        WHERE IsActive = 1
+          AND Id <> @CustomerId
+          AND Phone IS NOT NULL
+    ";
+
+            return await _db.QueryAsync<Customer>(sql, new { CustomerId = excludeCustomerId });
+        }
+
+       
+
+
     }
 }
