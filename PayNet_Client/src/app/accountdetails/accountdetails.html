@@ -1,0 +1,42 @@
+<app-navbar></app-navbar>
+
+<div class="container mt-4" *ngIf="!loading">
+  <div class="card shadow p-4">
+
+    <h4 class="fw-bold text-primary mb-3">Account Details</h4>
+
+    <div class="row mb-2">
+      <div class="col-4 fw-bold">Account Number</div>
+      <div class="col-8">{{ account.accountNumber }}</div>
+    </div>
+
+    <div class="row mb-2">
+      <div class="col-4 fw-bold">Bank</div>
+      <div class="col-8">{{ account.bankName }}</div>
+    </div>
+
+    <div class="row mb-2">
+      <div class="col-4 fw-bold">IFSC</div>
+      <div class="col-8">{{ account.ifsc }}</div>
+    </div>
+
+    <div class="row mb-2">
+      <div class="col-4 fw-bold">Balance</div>
+      <div class="col-8 text-success fw-bold">
+        ₹ {{ account.balance }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-4 fw-bold">Status</div>
+      <div class="col-8">
+        <span class="badge"
+              [class.bg-success]="account.isActive"
+              [class.bg-danger]="!account.isActive">
+          {{ account.isActive ? 'Active' : 'Inactive' }}
+        </span>
+      </div>
+    </div>
+
+  </div>
+</div>

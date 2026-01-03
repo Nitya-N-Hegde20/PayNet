@@ -69,5 +69,15 @@ namespace PayNet_Server.Repository
                 commandType: CommandType.StoredProcedure
             );
         }
+
+        public async Task<Account?> GetAccountDetailsAsync(string accountNumber)
+        {
+            return await _db.QueryFirstOrDefaultAsync<Account>(
+                "GetAccountDetailsByAccountNumber",
+                new { AccountNumber = accountNumber },
+                commandType: CommandType.StoredProcedure
+            );
+        }
+
     }
 }

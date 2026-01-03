@@ -1,0 +1,19 @@
+<app-navbar></app-navbar>
+
+<div class="container mt-4">
+
+  <h3 class="fw-bold text-primary mb-3">Your Linked Bank Accounts</h3>
+
+  <div *ngFor="let acc of accounts" class="account-card shadow-sm">
+    <div>
+      <h5 class="fw-bold">{{ acc.bankName || 'Bank' }}</h5>
+      <p class="text-muted small">{{ acc.accountNumber }}</p>
+      <p><b>Balance:</b> ₹{{ acc.balance }}</p>
+    </div>
+
+    <button class="btn btn-paynet" (click)="viewDetails(acc)">
+      View Details
+    </button>
+  </div>
+
+</div>

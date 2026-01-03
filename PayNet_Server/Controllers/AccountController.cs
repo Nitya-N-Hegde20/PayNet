@@ -56,9 +56,12 @@ namespace PayNet_Server.Controllers
         [HttpGet("customer/{customerId}")]
         public async Task<IActionResult> GetAccountsByCustomerId(int customerId)
         {
+
             var accounts = await _accountRepository.GetAccountsByCustomerIdAsync(customerId);
+
             return Ok(accounts);
         }
+
 
         [HttpGet("first-account/{customerId}")]
         public async Task<IActionResult> GetFirstAccount(int customerId)
@@ -66,6 +69,17 @@ namespace PayNet_Server.Controllers
             var acc = await _accountRepository.GetFirstAccountAsync(customerId);
             if (acc == null) return NotFound();
             return Ok(acc);
+        }
+
+        [HttpGet("details/{accountNumber}")]
+        public async Task<IActionResult> GetAccountDetails(string accountNumber)
+        {
+            var account = await _accountRepository.GetAccountDetailsAsync(accountNumber);
+
+            if (account == null)
+                return NotFound("Account not found");
+
+            return Ok(account);
         }
 
     }

@@ -1,0 +1,10 @@
+.account-card {
+  background: #fff;
+  padding: 15px 20px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 4px solid var(--paynet-dark);
+}

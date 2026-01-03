@@ -9,6 +9,8 @@ import { Profile } from './profile/profile';
 import { QR } from './qr/qr';
 import { SendMoney } from './send-money/send-money';
 import { PayContact } from './pay-contact/pay-contact';
+import { Accounts } from './accounts/accounts';
+import { Accountdetails } from './accountdetails/accountdetails';
 
 export const routes: Routes = [
     {path:'home', component:Home},
@@ -31,6 +33,15 @@ export const routes: Routes = [
     import('./pay-contact/pay-contact').then(m => m.PayContact),
   data: { ssr: false }
 }
+,
+{
+  path: 'accounts',
+  loadComponent: () =>
+    import('./accounts/accounts').then(m => m.Accounts),
+  data: { ssr: false }
+},
+
+{ path: 'account-details/:accNumber', component: Accountdetails }
 ,
     {path:'',redirectTo:'home',pathMatch:'full'}
 ];

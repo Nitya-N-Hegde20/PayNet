@@ -12,5 +12,7 @@ namespace PayNet_Server.Repository
         Task<List<Account>> GetAccountsByCustomerIdAsync(int customerId);
 
         Task<Account?> GetFirstAccountAsync(int customerId);
+        Task<Account?> GetAccountDetailsAsync(string accountNumber);
+
     }
 }
