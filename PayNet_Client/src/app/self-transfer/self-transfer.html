@@ -1,0 +1,43 @@
+<app-navbar></app-navbar>
+
+<div class="container mt-4">
+  <div class="card shadow p-4">
+
+    <h4 class="fw-bold text-primary mb-3">Self Transfer</h4>
+
+    <!-- FROM -->
+    <label class="fw-bold">From Account</label>
+    <select class="form-select mb-3"
+            [(ngModel)]="fromAccountNumber">
+      <option value="" disabled>Select account</option>
+      <option *ngFor="let acc of accounts"
+              [value]="acc.accountNumber">
+        {{ acc.bankName }} • {{ acc.accountNumber }}
+      </option>
+    </select>
+
+    <!-- TO -->
+    <label class="fw-bold">To Account</label>
+    <select class="form-select mb-3"
+            [(ngModel)]="toAccountNumber">
+      <option value="" disabled>Select account</option>
+      <option *ngFor="let acc of accounts"
+              [value]="acc.accountNumber">
+        {{ acc.bankName }} • {{ acc.accountNumber }}
+      </option>
+    </select>
+
+    <!-- AMOUNT -->
+    <label class="fw-bold">Amount</label>
+    <input type="number"
+           class="form-control mb-3"
+           [(ngModel)]="amount"
+           placeholder="Enter amount">
+
+    <button class="btn btn-paynet w-100"
+            (click)="transfer()">
+      Transfer Money
+    </button>
+
+  </div>
+</div>

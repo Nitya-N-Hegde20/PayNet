@@ -11,6 +11,7 @@ import { SendMoney } from './send-money/send-money';
 import { PayContact } from './pay-contact/pay-contact';
 import { Accounts } from './accounts/accounts';
 import { Accountdetails } from './accountdetails/accountdetails';
+import { SelfTransfer } from './self-transfer/self-transfer';
 
 export const routes: Routes = [
     {path:'home', component:Home},
@@ -43,5 +44,7 @@ export const routes: Routes = [
 
 { path: 'account-details/:accNumber', component: Accountdetails }
 ,
+{ path: 'self-transfer', component: SelfTransfer },
+
     {path:'',redirectTo:'home',pathMatch:'full'}
 ];
